@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogs | anas</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navigation container">
+        <div class="nav-brand">myportfolio</div>
+        <ul class="nav-pills">
+            <li class="list-item-inline">
+                <a href="./index.html" class="link ">home</a>
+            </li>
+            <li class="list-item-inline">
+                <a href="./projects.html" class="link ">projects</a>
+            </li>
+            <li class="list-item-inline">
+                <a href="./blogs.html" class="link link-active">blog</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1 class="hero-heading">my <span class="heading-inverted">blogs</span></h1>
+    </header>
+
+    <div class="container-center">
+        <div>
+            <h2>Callbacks, promises and async/await in javascript</h2>
+            <h3>
+                Callback functions in javascript</h3>
+
+            <ins>In javascript, it is possible to pass a function as an argument to another function. The function which
+                is
+                passed as an argument is called callback function.
+                The callback function can be called at anytime inside the function to which it is passed. This gives us
+                the
+                control to call it as per the need when required.</ins>
+            <p>
+                Example syntax of callback:<br>
+                <code>
+                    function func2(){<br>
+                    <ins>console.log('this is called back.')<br>
+                        }<br><br>
+
+                        function func1(callback){<br>
+                        <ins>console.log('this is main function.')<br>
+                            <ins>callback();<br>
+                                }<br><br>
+                                func1(func2);</code>
+            </p>
+            <ins>In the above example, func2 is called back from func1.
+
+                This is particularly helpful in a scenario when we have to operate on data which is not available
+                currently
+                and has to be fetched from somewhere else. A good example would be in the case of an api call, where the
+                data has to be fetched from another server and it may take some loading time. Also, in the case of async
+                finctions where one function has to wait for another function, callbacks are useful. In promises,
+                callback
+                functions can be useful when called in .then block at the fulfilment/rejection of a promise.
+
+                <br>
+                <br><br>
+                <h3>Promises</h3>
+                A promise in javascript is like a promise in real life - an assurance to get something done. It works as
+                a
+                way to handle something whose value is not known currently. A promise can have 3 states: pending,
+                fulfilled
+                or rejected. A pending promise eventually can be fulfilled or rejected. When it is fulfilled , the .then
+                handlers associated with it are called. A handler with .catch is added at the end, which gets called
+                when
+                the promise is rejected.
+
+                <p>Example syntax for promise:<br>
+                    <code> const promise1= new Promise(function(resolve,reject){<br>
+                        <ins>setTimeout(function(){<br>
+                            <ins>resolve('resolved');<br>
+                                <ins>},1000);<br>
+                                    })<br><br>
+
+                                    promise1.then(handler1)<br>
+                                    .then(handler2)<br>
+                                    .catch(errorHandler);
+                    </code>
+                </p>
+
+                <p> In the above example, promise1 is a promise created using new keyword.
+                    The .then blocks have handlers which are chained with an ending .catch block.
+                </p>
+                <br>
+                <br>
+                <h3> Async/await in javascript</h3>
+                <ins>Async/await are an easier way for writing asynchronous code.
+                    Adding async in front of a function makes it asynchronous and returns a promise object.
+                    await keyword is generally used while calling asynchronous functions returning promise(which may
+                    take time
+                    and whose value isnt known currently). It pauses the execution till the result of promise is
+                    evaluated.
+
+                    <p> Example syntax for async/await keywords:<br>
+                        <code> async function fun(){<br>
+                            try{<br>
+                            <ins>await promise1;<br>
+                                <ins>await handler1();<br>
+                                    <ins>handler2();<br>
+                                        }<br>
+                                        catch(){<br>
+                                        <ins>errorHandler();<br>
+                                            <ins>}<br>
+                                                }<br>
+
+                                                fun();
+                        </code>
+                    </p>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
