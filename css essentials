@@ -1,0 +1,10 @@
+.container-center
+{
+margin:auto;
+max-width:600px;
+}
+
+padding: rem;
+border-radius: rem
+border:1px solid red;
+
